@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 24px;
+
+  /* High-Transparency Pure Crystal Glass */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.10) 100%
+  );
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+  /* Fine specular glass boundary */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+
+  /* Crisp glass refraction highlights without milky white fog */
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.07),
+    0 2px 8px 0 rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.05);
+
+  /* Smooth spring expansion */
+  transition:
+    padding 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  will-change: padding, transform;
+}
+
+/* Hover: expands wider while remaining crystal-transparent */
+.navbar:hover {
+  padding: 10px 38px;
+  transform: translateX(-50%) translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 14px 40px -4px rgba(0, 0, 0, 0.1),
+    0 4px 12px 0 rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  transition: gap 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Items smoothly breathe apart when the dock expands */
+.navbar:hover .nav-links {
+  gap: 28px;
+}
+
+.nav-links a,
+.nav-links button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #18181b;
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-links svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #d99b19;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.separator {
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  transition: opacity 0.35s ease;
+}
