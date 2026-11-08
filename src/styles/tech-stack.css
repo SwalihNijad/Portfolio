@@ -1,0 +1,221 @@
+/* Tech Stack / Skills Section */
+.tech-stack-section {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto 7rem;
+  padding: 0 1.5rem;
+  scroll-margin-top: 100px;
+}
+
+.tech-stack-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717a;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.section-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d99b19;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #18181b;
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #52525b;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* Category Filter Tabs */
+.tech-filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  background: rgba(255, 255, 255, 0.35);
+  color: #52525b;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.filter-tab:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #18181b;
+  border-color: rgba(24, 24, 27, 0.18);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background: #18181b;
+  color: #f7f7f5;
+  border-color: #18181b;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+/* Individual Skill Card */
+.skill-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  /* Crystal Glassmorphic Card */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.14) 100%
+  );
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 6px 20px 0 rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 12px 28px -2px rgba(0, 0, 0, 0.07),
+    0 4px 10px 0 rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+}
+
+/* Skill Icon Box */
+.skill-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.skill-card:hover .skill-icon-wrap {
+  transform: scale(1.08);
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.skill-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.skill-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #18181b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill-category {
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: #71717a;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .skill-icon-wrap {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skill-icon-wrap svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+}
+
