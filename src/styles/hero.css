@@ -1,0 +1,296 @@
+/* Hero Section - Perfectly Centered with Creative Ongoing Animations */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Ambient living glow orbs in the background */
+.hero-ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.glow-orb-1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.16) 0%,
+    rgba(234, 179, 8, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  transform: translate(-50%, -50%);
+  animation: orbFloat1 18s ease-in-out infinite alternate;
+}
+
+.glow-orb-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.12) 0%,
+    rgba(168, 85, 247, 0.07) 45%,
+    transparent 70%
+  );
+  filter: blur(65px);
+  transform: translate(-50%, -50%);
+  animation: orbFloat2 22s ease-in-out infinite alternate;
+}
+
+/* Blueprint rotating dashed coordinate ring */
+.hero-orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1px dashed rgba(24, 24, 27, 0.09);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  animation: slowSpin 60s linear infinite;
+}
+
+.hero-orbit-ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 24, 27, 0.04);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  animation: slowSpinReverse 45s linear infinite;
+}
+
+/* Tiny orbiting satellite on the ring */
+.orbit-satellite {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #18181b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.orbit-satellite-2 {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d99b19;
+  box-shadow: 0 0 8px rgba(217, 155, 25, 0.4);
+}
+
+/* Foreground Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Floating creative status badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #4b5563;
+  animation: badgeFloat 4s ease-in-out infinite;
+}
+
+.sparkle-icon {
+  color: #d99b19;
+  display: inline-block;
+  animation: sparkleRotate 8s linear infinite;
+}
+
+/* Name Typography */
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: #18181b;
+  margin: 0;
+  background: linear-gradient(135deg, #18181b 0%, #3f3f46 60%, #18181b 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.hero-name:hover {
+  transform: scale(1.02);
+}
+
+/* Description Typography */
+.hero-desc {
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  line-height: 1.75;
+  color: #4b5563;
+  margin: 0;
+  max-width: 560px;
+  font-weight: 400;
+}
+
+/* Bottom Ongoing Scroll Cue */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #a1a1aa;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  pointer-events: none;
+  animation: scrollBob 2.4s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #71717a;
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes orbFloat1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1) translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15) translate(30px, -20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.95) translate(-25px, 25px);
+  }
+}
+
+@keyframes orbFloat2 {
+  0% {
+    transform: translate(-50%, -50%) scale(1) translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) translate(-35px, -15px);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9) translate(20px, 30px);
+  }
+}
+
+@keyframes slowSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes slowSpinReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes sparkleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scrollBob {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+    opacity: 0.9;
+  }
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .hero-orbit-ring {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-orbit-ring-inner {
+    width: 240px;
+    height: 240px;
+  }
+
+  .glow-orb-1,
+  .glow-orb-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
